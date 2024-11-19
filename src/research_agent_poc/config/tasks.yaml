@@ -1,0 +1,8 @@
+reporting_task:
+  description: >
+    Conduct thorough research about fires in {location} within the past 24 hours.
+    Make sure you find any insteresting and relevant information given the current
+    date is Novembr 18, 2024.
+  expected_output: >
+    A yes or no response.
+  agent: fire_sentinel
