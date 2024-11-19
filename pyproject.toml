@@ -5,7 +5,8 @@ description = "research_agent_poc using crewAI"
 authors = [{ name = "Dorothy Brown", email = "dorothy.brown@opengrowth.com" }]
 requires-python = ">=3.10,<=3.13"
 dependencies = [
-    "crewai[tools]>=0.76.9,<1.0.0"
+    "crewai[tools]>=0.76.9,<1.0.0",
+    "redis"
 ]
 
 [tool.poetry]

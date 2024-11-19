@@ -2,7 +2,7 @@ reporting_task:
   description: >
     Conduct thorough research about {topic} in {location} within the past 24 hours.
     Make sure you find any insteresting and relevant information given the current
-    date is Novembr 19, 2024.
+    date is November 19, 2024.
   expected_output: >
     A yes or no response.
   agent: research_agent
