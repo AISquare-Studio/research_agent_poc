@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import sys
-import redis
+# import redis
 from research_agent_poc.crew import ResearchAgentPocCrew
 
 # This main file is intended to be a way for you to run your
@@ -16,28 +16,35 @@ def run():
     """
     Run the crew.
     """
-    # Connect to the database
-    redis_client = redis.Redis(
-        host='redis-16263.c44.us-east-1-2.ec2.redns.redis-cloud.com',
-        port=16263,
-        password='ES4hSBs0nGGPsreFdfssoooUQZbN9nKH',
-        decode_responses=True
+    # # Connect to the database
+    # redis_client = redis.Redis(
+    #     host='redis-16263.c44.us-east-1-2.ec2.redns.redis-cloud.com',
+    #     port=16263,
+    #     password='ES4hSBs0nGGPsreFdfssoooUQZbN9nKH',
+    #     decode_responses=True
+    # )
+
+    # # Create a PubSub object that subscribes to channels and listens for new messages.
+    # pub_sub = redis_client.pubsub()
+
+    # # Subscribe to 'test' channel
+    # pub_sub.subscribe(SUB_CHANNEL)
+
+    # # Listen for messages
+    # for message in pub_sub.listen():
+    #     message = pub_sub.get_message()
+    #     if message['type'] == 'message':
+    #         response = ResearchAgentPocCrew().crew().kickoff(
+    #             inputs={'location': message['data']}
+    #         )
+    #         redis_client.publish(PUB_CHANNEL, response)
+
+    ResearchAgentPocCrew().crew().kickoff(
+        inputs={
+            'location': 'San Francisco, California',
+            'topic': 'Earthquake'
+        }
     )
-
-    # Create a PubSub object that subscribes to channels and listens for new messages.
-    pub_sub = redis_client.pubsub()
-
-    # Subscribe to 'test' channel
-    pub_sub.subscribe(SUB_CHANNEL)
-
-    # Listen for messages
-    for message in pub_sub.listen():
-        message = pub_sub.get_message()
-        if message['type'] == 'message':
-            response = ResearchAgentPocCrew().crew().kickoff(
-                inputs={'location': message['data']}
-            )
-            redis_client.publish(PUB_CHANNEL, response)
 
 
 def train():

@@ -13,9 +13,9 @@ class ResearchAgentPocCrew():
     """ResearchAgentPoc crew"""
 
     @agent
-    def fire_sentinel(self) -> Agent:
+    def research_agent(self) -> Agent:
         return Agent(
-            config=self.agents_config['fire_sentinel'],
+            config=self.agents_config['research_agent'],
             # Example of custom tool, loaded on the beginning of file
             tools=[SerperDevTool()],
             verbose=True
